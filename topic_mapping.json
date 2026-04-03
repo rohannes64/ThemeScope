@@ -1,0 +1,148 @@
+{
+  "topic_to_domain": {
+    "0": "Economics & Finance",
+    "1": "Quantum Computing & Physics",
+    "2": "Climate & Environmental Science",
+    "3": "Medical & Clinical Research",
+    "4": "Social Sciences & Psychology",
+    "5": "Robotics & Autonomous Systems",
+    "6": "Machine Learning & AI",
+    "7": "Astronomy & Astrophysics",
+    "8": "Bioinformatics & Genomics",
+    "9": "Materials Science & Nanotechnology"
+  },
+  "topic_keywords": {
+    "0": [
+      "market",
+      "price",
+      "financial",
+      "risk",
+      "impact",
+      "trading",
+      "order",
+      "economic",
+      "time",
+      "markets"
+    ],
+    "1": [
+      "quantum",
+      "states",
+      "state",
+      "entanglement",
+      "classical",
+      "photon",
+      "spin",
+      "single",
+      "field",
+      "general"
+    ],
+    "2": [
+      "magnetic",
+      "temperature",
+      "field",
+      "energy",
+      "spin",
+      "surface",
+      "galaxies",
+      "observed",
+      "electron",
+      "density"
+    ],
+    "3": [
+      "problem",
+      "problems",
+      "function",
+      "linear",
+      "non",
+      "learning",
+      "techniques",
+      "theory",
+      "structure",
+      "parameters"
+    ],
+    "4": [
+      "user",
+      "learning",
+      "design",
+      "knowledge",
+      "web",
+      "software",
+      "human",
+      "users",
+      "development",
+      "technology"
+    ],
+    "5": [
+      "control",
+      "time",
+      "design",
+      "robot",
+      "problem",
+      "simulation",
+      "controller",
+      "optimal",
+      "order",
+      "robots"
+    ],
+    "6": [
+      "network",
+      "neural",
+      "networks",
+      "neurons",
+      "activity",
+      "cells",
+      "brain",
+      "cell",
+      "dynamics",
+      "time"
+    ],
+    "7": [
+      "mass",
+      "emission",
+      "ray",
+      "stars",
+      "observations",
+      "time",
+      "energy",
+      "star",
+      "galaxy",
+      "growth"
+    ],
+    "8": [
+      "time",
+      "frequency",
+      "power",
+      "phase",
+      "current",
+      "distribution",
+      "critical",
+      "sequences",
+      "sequence",
+      "law"
+    ],
+    "9": [
+      "parallel",
+      "pressure",
+      "numerical",
+      "wave",
+      "stress",
+      "surface",
+      "manipulators",
+      "parameters",
+      "space",
+      "flow"
+    ]
+  },
+  "domain_colors": {
+    "Machine Learning & AI": "#6366f1",
+    "Bioinformatics & Genomics": "#10b981",
+    "Climate & Environmental Science": "#0ea5e9",
+    "Quantum Computing & Physics": "#8b5cf6",
+    "Medical & Clinical Research": "#f43f5e",
+    "Robotics & Autonomous Systems": "#f59e0b",
+    "Economics & Finance": "#14b8a6",
+    "Materials Science & Nanotechnology": "#ec4899",
+    "Social Sciences & Psychology": "#84cc16",
+    "Astronomy & Astrophysics": "#f97316"
+  }
+}
