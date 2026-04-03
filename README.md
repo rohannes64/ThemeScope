@@ -1,4 +1,4 @@
-# ThemeScope — Research Theme Discovery (NMF Edition)
+# ThemeScope — Research Theme Discovery (NMF Edition) Vanshika
 
 Topic modeling web app using **NMF with KL Divergence** on real research abstracts.
 
