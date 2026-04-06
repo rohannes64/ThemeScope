@@ -1,10 +1,11 @@
 """
 app.py — ThemeScope Flask backend (NMF edition)
+Render-ready: uses gunicorn, reads PORT from environment
 """
 import pickle, json, re, os
 from flask import Flask, request, jsonify, render_template
 
-app  = Flask(__name__)
+app = Flask(__name__)
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 def load_artifacts():
@@ -62,12 +63,9 @@ def analyze():
     if len(abstract.split()) < 15:
         return jsonify({"error": "Abstract too short — please provide at least 15 words."}), 400
 
-    # TF-IDF → NMF transform
-    X = vectorizer.transform([clean_text(abstract)])
-    W = nmf.transform(X)[0]          # topic weight vector
-
-    # Normalize to sum to 100%
-    total = W.sum() or 1.0
+    X      = vectorizer.transform([clean_text(abstract)])
+    W      = nmf.transform(X)[0]
+    total  = W.sum() or 1.0
     W_norm = W / total
 
     themes = []
@@ -76,12 +74,12 @@ def analyze():
             continue
         domain = TOPIC_TO_DOMAIN.get(str(t_idx), f"Topic {t_idx}")
         themes.append({
-            "topic_id": int(t_idx),
-            "name":     domain,
-            "icon":     DOMAIN_ICONS.get(domain, "🔬"),
-            "weight":   round(float(weight) * 100, 1),
-            "keywords": TOPIC_KEYWORDS.get(str(t_idx), []),
-            "color":    DOMAIN_COLORS.get(domain, "#6366f1"),
+            "topic_id":  int(t_idx),
+            "name":      domain,
+            "icon":      DOMAIN_ICONS.get(domain, "🔬"),
+            "weight":    round(float(weight) * 100, 1),
+            "keywords":  TOPIC_KEYWORDS.get(str(t_idx), []),
+            "color":     DOMAIN_COLORS.get(domain, "#6366f1"),
             "coherence": COHERENCE_SCORES.get(domain, 0),
         })
 
@@ -93,5 +91,9 @@ def analyze():
         "word_count": len(abstract.split()),
     })
 
+# CHANGED: removed debug=True and hardcoded port
+# Render injects PORT as an environment variable
+# gunicorn handles the actual serving — this block is only for local testing
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
