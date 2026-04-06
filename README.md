@@ -9,7 +9,7 @@ Topic modeling web app using **NMF with KL Divergence** on real research abstrac
 | Model | Non-negative Matrix Factorization (NMF) |
 | Objective | Minimize KL divergence: `KL(X \|\| WH)` |
 | Solver | Multiplicative Updates (`mu`) |
-| Vectorizer | TF-IDF (sublinear, bigrams, 8000 features) |
+| Vectorizer | CountVectorizer|
 | Topics | 10 domains |
 | Training docs | ~10,000 abstracts |
 
